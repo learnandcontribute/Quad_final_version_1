@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cijene najma quadova Zagreb — slobodni najam od €130 pola dana, vođene ekspedicije od €200. Gorivo, oprema i obuka uključeni. Bez skrivenih troškova.">
+<title>Cijene — Quad Rent Zagreb</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ═══ Pricing card refinements ═══ */
+  .pricing-card{transition:border-color 0.25s ease,transform 0.25s ease,box-shadow 0.25s ease;cursor:default;position:relative}
+  .pricing-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 30px rgba(245,166,35,0.12)}
+  .pricing-card:hover .pricing-card__cta-btn{background:var(--accent);color:#0a0a0a;border-color:var(--accent)}
+
+  /* Header row: name + ccm badge on right */
+  .pricing-card__head{display:flex;align-items:center;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem}
+  .pricing-card__type{font-family:var(--font-d);font-weight:700;font-size:0.78rem;color:var(--text);letter-spacing:0.02em;text-transform:uppercase;margin-bottom:0 !important}
+  .pricing-card__ccm{font-family:var(--font-d);font-weight:600;font-size:0.6rem;color:var(--text-3);letter-spacing:0.04em;padding:0.28rem 0.55rem;background:var(--bg-elevated);border-radius:999px;border:1px solid var(--border);white-space:nowrap;text-transform:none}
+
+  /* Tier pricing (multi-price display for 3-tier kids) */
+  .pricing-tiers{display:flex;flex-direction:column;gap:0.35rem;margin-top:0.25rem;padding-top:0.9rem;border-top:1px solid var(--border)}
+  .pricing-tier{display:flex;align-items:baseline;justify-content:space-between;gap:0.6rem}
+  .pricing-tier__price{font-family:var(--font-d);font-weight:800;font-size:1.15rem;color:var(--text);line-height:1}
+  .pricing-tier__label{font-size:0.62rem;color:var(--text-3);text-align:right}
+  .pricing-tier--main .pricing-tier__price{font-size:1.7rem;color:var(--accent)}
+  .pricing-tier--main .pricing-tier__label{color:var(--text-2)}
+
+  /* Ghost button that appears at bottom of card as CTA */
+  .pricing-card__cta-btn{width:100%;padding:0.75rem 1rem;font-family:var(--font-d);font-weight:600;font-size:0.72rem;text-align:center;border-radius:999px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;transition:all 0.25s ease;letter-spacing:0.02em}
+
+  /* Category heading */
+  .category-heading{margin-bottom:1.5rem}
+  .category-heading__label{font-family:var(--font-d);font-weight:700;font-size:0.55rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0.4rem;display:flex;align-items:center;gap:0.5rem}
+  .category-heading__label::before,.category-heading__label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--accent),transparent);max-width:60px}
+  .category-heading__label::before{background:linear-gradient(to left,var(--accent),transparent)}
+  .category-heading__title{font-family:var(--font-d);font-weight:800;font-size:clamp(1.3rem,3vw,1.9rem);text-align:center;line-height:1.15}
+  .category-heading__sub{font-size:0.75rem;color:var(--text-2);text-align:center;margin-top:0.5rem;max-width:600px;margin-left:auto;margin-right:auto}
+
+  /* Guided expedition cards — clickable, hover-highlighted */
+  .guided-grid{display:grid;grid-template-columns:1fr;gap:1.2rem}
+  .guided-card{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:linear-gradient(135deg,var(--bg-card) 0%,rgba(245,166,35,0.04) 100%);border:1px solid rgba(245,166,35,0.2);border-radius:var(--r-xl);overflow:hidden;transition:border-color 0.25s ease,transform 0.25s ease,box-shadow 0.25s ease;cursor:pointer;position:relative}
+  .guided-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 14px 36px rgba(245,166,35,0.18)}
+  .guided-card:hover .guided-card__cta{color:var(--accent);gap:0.65rem}
+  .guided-card:hover .guided-card__cta-arrow{transform:translateX(3px)}
+  .guided-card__body{padding:1.4rem 1.3rem;display:flex;flex-direction:column;flex:1;gap:0.8rem}
+  .guided-card__meta-row{display:flex;gap:0.35rem;flex-wrap:wrap}
+  .guided-card__title{font-family:var(--font-d);font-weight:800;font-size:1.05rem;line-height:1.25}
+  .guided-card__subtitle{font-family:var(--font-d);font-weight:500;font-size:0.75rem;color:var(--accent);line-height:1.4;margin-top:-0.3rem}
+  .guided-card__hook{font-size:0.72rem;color:var(--text-2);line-height:1.6;flex:1}
+  .guided-card__cta-row{display:flex;align-items:baseline;justify-content:space-between;gap:0.8rem;flex-wrap:wrap;padding-top:0.9rem;border-top:1px solid var(--border);margin-top:auto}
+  .guided-card__price{display:flex;align-items:baseline;gap:0.3rem;flex-wrap:wrap}
+  .guided-card__price-val{font-family:var(--font-d);font-weight:800;font-size:1.6rem;color:var(--accent);line-height:1}
+  .guided-card__price-unit{font-size:0.62rem;color:var(--text-3)}
+  .guided-card__cta{font-family:var(--font-d);font-weight:600;font-size:0.7rem;color:var(--text);white-space:nowrap;display:inline-flex;align-items:center;gap:0.4rem;transition:color 0.25s ease,gap 0.25s ease}
+  .guided-card__cta-arrow{transition:transform 0.25s ease}
+  @media(min-width:960px){.guided-grid{grid-template-columns:repeat(3,1fr)}}
+
+  @media(min-width:640px){.pricing-grid{grid-template-columns:repeat(2,1fr) !important}}
+  @media(min-width:960px){.pricing-grid{grid-template-columns:repeat(3,1fr) !important}}
+
+  /* Since hero is removed, give first section extra top padding so content clears the fixed nav */
+  body > section.page-section:first-of-type{padding-top:6rem}
+  @media(max-width:699px){body > section.page-section:first-of-type{padding-top:5rem}}
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="toggleMenu()">Početna</a><a href="quad.html" onclick="toggleMenu()">Flota</a><a href="obitelj.html" onclick="toggleMenu()">Obitelj</a><a href="cijene.html" onclick="toggleMenu()">Cijene</a><a href="rute.html" onclick="toggleMenu()">Rute</a><a href="faq.html" onclick="toggleMenu()">Pitanja</a><a href="o-nama.html" onclick="toggleMenu()">O nama</a><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a><a href="blog.html" onclick="toggleMenu()">Blog</a></div>
+
+<nav class="nav" id="nav"><div class="container nav__inner"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:44px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a><div class="nav__links"><a href="quad.html">Flota</a><a href="obitelj.html">Obitelj</a><a href="cijene.html" class="active">Cijene</a><a href="rute.html">Rute</a><a href="faq.html">Pitanja</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a><a href="blog.html">Blog</a></div><button class="btn btn--accent btn--sm nav__book" onclick="openBooking()">Rezerviraj</button><button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button></div></nav>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- KATEGORIJA 1: SLOBODNI NAJAM                 -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="page-section reveal">
+  <div class="container">
+
+    <div class="category-heading">
+      <div class="category-heading__label">Kategorija 1 · Bez vodiča</div>
+      <div class="category-heading__title">Slobodni najam — Vožnja po vašoj želji!</div>
+      <div class="category-heading__sub">Odaberite quad, mi pripremimo. Vozite kamo želite našim provjerenim rutama.</div>
+    </div>
+
+    <div class="pricing-grid" style="max-width:100%;display:grid;grid-template-columns:1fr;gap:1.2rem">
+
+      <!-- Segway AT5L -->
+      <div class="pricing-card">
+        <div class="pricing-card__badge">4 vozila</div>
+        <div class="pricing-card__head">
+          <div class="pricing-card__type">Segway AT5L</div>
+          <div class="pricing-card__ccm">500 ccm</div>
+        </div>
+        <ul class="pricing-card__features">
+          <li>Agilnost i moderna tehnologija</li>
+          <li>Premium osjećaj, vrhunska kontrola</li>
+          <li>Automatik · 4×4 · Koferi</li>
+          <li>Gorivo, oprema, obuka uključeni</li>
+          <li>Do 100 km uključeno</li>
+        </ul>
+        <div class="pricing-tiers">
+          <div class="pricing-tier pricing-tier--main">
+            <div class="pricing-tier__price">€130</div>
+            <div class="pricing-tier__label">6h · pola dana</div>
+          </div>
+          <div class="pricing-tier">
+            <div class="pricing-tier__price">€200</div>
+            <div class="pricing-tier__label">12h · cijeli dan</div>
+          </div>
+        </div>
+        <button class="pricing-card__cta-btn mt-3" onclick="openBooking('segway','half')">Rezerviraj Segway →</button>
+      </div>
+
+      <!-- Linhai 550L -->
+      <div class="pricing-card">
+        <div class="pricing-card__badge" style="background:var(--bg-elevated)">2 vozila</div>
+        <div class="pricing-card__head">
+          <div class="pricing-card__type">Linhai 550L</div>
+          <div class="pricing-card__ccm">550 ccm</div>
+        </div>
+        <ul class="pricing-card__features">
+          <li>Pouzdani i robusni</li>
+          <li>Idealni za početnike i iskusne</li>
+          <li>4×4 · EFI · CVT</li>
+          <li>Gorivo, oprema, obuka uključeni</li>
+          <li>Do 100 km uključeno</li>
+        </ul>
+        <div class="pricing-tiers">
+          <div class="pricing-tier pricing-tier--main">
+            <div class="pricing-tier__price">€130</div>
+            <div class="pricing-tier__label">6h · pola dana</div>
+          </div>
+          <div class="pricing-tier">
+            <div class="pricing-tier__price">€200</div>
+            <div class="pricing-tier__label">12h · cijeli dan</div>
+          </div>
+        </div>
+        <button class="pricing-card__cta-btn mt-3" onclick="openBooking('linhai550','half')">Rezerviraj Linhai 550 →</button>
+      </div>
+
+      <!-- Linhai 650 Pro Landforce -->
+      <div class="pricing-card">
+        <div class="pricing-card__badge" style="background:var(--bg-elevated)">2 vozila</div>
+        <div class="pricing-card__head">
+          <div class="pricing-card__type">Linhai 650 Pro Landforce</div>
+          <div class="pricing-card__ccm">650 ccm</div>
+        </div>
+        <ul class="pricing-card__features">
+          <li>Pravi terenski ratnici</li>
+          <li>Dodatna snaga za teže terene</li>
+          <li>4×4 · EPS · ABS · L verzija</li>
+          <li>Gorivo, oprema, obuka uključeni</li>
+          <li>Do 100 km uključeno</li>
+        </ul>
+        <div class="pricing-tiers">
+          <div class="pricing-tier pricing-tier--main">
+            <div class="pricing-tier__price">€180</div>
+            <div class="pricing-tier__label">6h · pola dana</div>
+          </div>
+          <div class="pricing-tier">
+            <div class="pricing-tier__price">€250</div>
+            <div class="pricing-tier__label">12h · cijeli dan</div>
+          </div>
+        </div>
+        <button class="pricing-card__cta-btn mt-3" onclick="openBooking('linhai650','half')">Rezerviraj Linhai 650 →</button>
+      </div>
+
+      <!-- Linhai 1000 -->
+      <div class="pricing-card">
+        <div class="pricing-card__badge" style="background:var(--accent);color:#0a0a0a">Kralj terena</div>
+        <div class="pricing-card__head">
+          <div class="pricing-card__type">Linhai 1000</div>
+          <div class="pricing-card__ccm">1000 ccm</div>
+        </div>
+        <ul class="pricing-card__features">
+          <li>Brutalna snaga, 93 KS</li>
+          <li>Maksimalni adrenalin</li>
+          <li>V2 · 4×4 · Blokade diferencijala</li>
+          <li>Gorivo, oprema, obuka uključeni</li>
+          <li>Do 100 km uključeno</li>
+        </ul>
+        <div class="pricing-tiers">
+          <div class="pricing-tier pricing-tier--main">
+            <div class="pricing-tier__price">€250</div>
+            <div class="pricing-tier__label">6h · pola dana</div>
+          </div>
+          <div class="pricing-tier">
+            <div class="pricing-tier__price">€350</div>
+            <div class="pricing-tier__label">12h · cijeli dan</div>
+          </div>
+        </div>
+        <button class="pricing-card__cta-btn mt-3" onclick="openBooking('linhai1000','half')">Rezerviraj Linhai 1000 →</button>
+      </div>
+
+      <!-- Dječji quad — 3 tier pricing -->
+      <div class="pricing-card">
+        <div class="pricing-card__badge" style="background:var(--success);color:#0a0a0a">Djeca 6+ god</div>
+        <div class="pricing-card__head">
+          <div class="pricing-card__type">Dječji quad</div>
+          <div class="pricing-card__ccm">90 / 125 ccm</div>
+        </div>
+        <ul class="pricing-card__features">
+          <li>Midi Sirius i XTL Tyrannosaurus</li>
+          <li>Dječja oprema uključena</li>
+          <li>Kill-switch, nadzor roditelja</li>
+          <li>30 km prikladnih staza</li>
+          <li>Nisu za cestovnu vožnju</li>
+        </ul>
+        <div class="pricing-tiers">
+          <div class="pricing-tier pricing-tier--main">
+            <div class="pricing-tier__price">€60</div>
+            <div class="pricing-tier__label">3h · kraća sesija</div>
+          </div>
+          <div class="pricing-tier">
+            <div class="pricing-tier__price">€100</div>
+            <div class="pricing-tier__label">6h · pola dana</div>
+          </div>
+          <div class="pricing-tier">
+            <div class="pricing-tier__price">€150</div>
+            <div class="pricing-tier__label">12h · cijeli dan</div>
+          </div>
+        </div>
+        <button class="pricing-card__cta-btn mt-3" onclick="openBooking('kids','half')">Rezerviraj dječji quad →</button>
+      </div>
+
+    </div>
+
+    <!-- Km limit note -->
+    <div style="margin-top:1.5rem;padding:1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-md)">
+      <div style="font-family:var(--font-d);font-weight:600;font-size:0.82rem;margin-bottom:0.3rem">📏 Ograničenje kilometraže</div>
+      <div style="font-size:0.68rem;color:var(--text-2);line-height:1.6">Svaki najam uključuje do 100 km. Svaki dodatni kilometar naplaćuje se €1. Vrijedi za sve pakete slobodnog najma.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- KATEGORIJA 2: VOŽNJA S VODIČEM              -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="page-section page-section--border reveal">
+  <div class="container">
+
+    <div class="category-heading">
+      <div class="category-heading__label">Kategorija 2 · S vodičem</div>
+      <div class="category-heading__title">Vožnja s vodičem!</div>
+      <div class="category-heading__sub">Vođene ekspedicije s iskusnim lokalcem. Skrivene rute, prirodne atrakcije, priče iz kraja.</div>
+    </div>
+
+    <div class="guided-grid">
+
+      <a href="ture/pokupsko.html" class="guided-card" aria-label="Detalji ekspedicije Pokupsko">
+        <div class="guided-card__body">
+          <div class="guided-card__meta-row">
+            <span class="chip chip--accent">6 sati</span>
+            <span class="chip">2 osobe</span>
+            <span class="chip">Rijeka Kupa</span>
+          </div>
+          <div class="guided-card__title">Adrenalinska Off-Road Ekspedicija Pokupsko</div>
+          <div class="guided-card__subtitle">Šumski putevi, skrivena sela i moćna rijeka Kupa</div>
+          <div class="guided-card__hook">Bijeg iz svakodnevice i injekcija čistog adrenalina na četiri kotača. Kroz najzanimljivije šumske puteve, skrivena sela okolice Pokupskog i uz moćnu rijeku Kupu.</div>
+          <div class="guided-card__cta-row">
+            <div class="guided-card__price">
+              <span class="guided-card__price-val">€200</span>
+              <span class="guided-card__price-unit">/ vozilo · 2 osobe</span>
+            </div>
+            <span class="guided-card__cta">Detalji <span class="guided-card__cta-arrow">→</span></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="ture/sljeme.html" class="guided-card" aria-label="Detalji ekspedicije Sljeme">
+        <div class="guided-card__body">
+          <div class="guided-card__meta-row">
+            <span class="chip chip--accent">6 sati</span>
+            <span class="chip">2 osobe</span>
+            <span class="chip">Medvednica</span>
+          </div>
+          <div class="guided-card__title">Kamenolom Maruševec — Sljeme Toranj</div>
+          <div class="guided-card__subtitle">Uspon na krov Medvednice s panoramskim pogledom na Zagreb</div>
+          <div class="guided-card__hook">Od napuštenog kamenoloma Maruševec do vrha Sljemena i televizijskog tornja. Šumske serpentine, hladovina i pogled koji vas ostavlja bez daha.</div>
+          <div class="guided-card__cta-row">
+            <div class="guided-card__price">
+              <span class="guided-card__price-val">€200</span>
+              <span class="guided-card__price-unit">/ vozilo · 2 osobe</span>
+            </div>
+            <span class="guided-card__cta">Detalji <span class="guided-card__cta-arrow">→</span></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="ture/safari-kupa.html" class="guided-card" aria-label="Detalji cjelodnevnog safarija na Kupi">
+        <div class="guided-card__body">
+          <div class="guided-card__meta-row">
+            <span class="chip chip--accent">10–12 sati</span>
+            <span class="chip">2 osobe</span>
+            <span class="chip">Kupanje</span>
+          </div>
+          <div class="guided-card__title">Cjelodnevni Safari & Kupanje na rijeci Kupi</div>
+          <div class="guided-card__subtitle">Pun dan pustolovine — od šuma do vode</div>
+          <div class="guided-card__hook">Naša najzahtjevnija i najduža ekspedicija. Divlje staze, više odmorišta, ručak u prirodi i kupanje na skrivenom rukavcu rijeke Kupe. Cijeli dan pravog off-road iskustva.</div>
+          <div class="guided-card__cta-row">
+            <div class="guided-card__price">
+              <span class="guided-card__price-val">€200</span>
+              <span class="guided-card__price-unit">/ vozilo · 2 osobe</span>
+            </div>
+            <span class="guided-card__cta">Detalji <span class="guided-card__cta-arrow">→</span></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ŠTO JE UKLJUČENO -->
+<section class="page-section page-section--border reveal">
+  <div class="container">
+    <h2 class="section-title mb-3">Što je uključeno u cijenu</h2>
+    <div class="grid-2">
+
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.2rem">
+        <div style="font-family:var(--font-d);font-weight:700;font-size:0.88rem;margin-bottom:0.8rem"><span style="color:var(--success)">✓</span> Uključeno</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem">
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--text-2)"><span style="color:var(--success);font-size:0.55rem">●</span> Quad</div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--text-2)"><span style="color:var(--success);font-size:0.55rem">●</span> Gorivo (pun do punog)</div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--text-2)"><span style="color:var(--success);font-size:0.55rem">●</span> Kaciga</div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--text-2)"><span style="color:var(--success);font-size:0.55rem">●</span> Zaštitne naočale</div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--text-2)"><span style="color:var(--success);font-size:0.55rem">●</span> Rukavice</div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--text-2)"><span style="color:var(--success);font-size:0.55rem">●</span> Obuka</div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--text-2)"><span style="color:var(--success);font-size:0.55rem">●</span> Pristup stazama</div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--text-2)"><span style="color:var(--success);font-size:0.55rem">●</span> Besplatan parking</div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--text-2)"><span style="color:var(--success);font-size:0.55rem">●</span> Prva pomoć na quadu</div>
+          <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.68rem;color:var(--text-2)"><span style="color:var(--success);font-size:0.55rem">●</span> Do 100 km</div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:0.8rem">
+        <div class="info-card">
+          <div class="info-card__icon">⛽</div>
+          <div><div class="info-card__title">Gorivo: pun do punog</div><div class="info-card__text">Quad preuzimate s punim rezervoarom i vraćate s punim. Gorivo je uključeno u cijenu najma.</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon">💳</div>
+          <div><div class="info-card__title">Depozit: €200</div><div class="info-card__text">Sigurnosni polog od €200 ostavlja se prije preuzimanja. Vraća se u potpunosti po povratku neoštećenog quada.</div></div>
+        </div>
+        <div class="info-card">
+          <div class="info-card__icon">👕</div>
+          <div><div class="info-card__title">Što ponijeti</div><div class="info-card__text">Slojevitu, sportsku odjeću koju vam nije žao zaprljati (blato je dio zabave!) i čvrstu zatvorenu obuću. Sve ostalo dobivate od nas.</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRAVILA -->
+<section class="page-section reveal">
+  <div class="container">
+    <h2 class="section-title mb-3">Pravila i uvjeti</h2>
+    <div class="grid-2">
+      <div class="info-card"><div class="info-card__icon">🪪</div><div><div class="info-card__title">Vozačka dozvola B kategorije</div><div class="info-card__text">Za odrasle quadove obavezna je važeća vozačka dozvola B kategorije. Fizički dokument morate imati sa sobom.</div></div></div>
+      <div class="info-card"><div class="info-card__icon">👥</div><div><div class="info-card__title">Vožnja u dvoje</div><div class="info-card__text">Svi naši quadovi su registrirani za 2 osobe. Sjedala su prostrana i udobna za oba putnika.</div></div></div>
+      <div class="info-card"><div class="info-card__icon">👶</div><div><div class="info-card__title">Djeca od 6+ godina</div><div class="info-card__text">Dječji quadovi za djecu od 6 godina, uz obavezan nadzor roditelja. Vozila nisu registrirana za cestovnu vožnju.</div></div></div>
+      <div class="info-card"><div class="info-card__icon">🛡</div><div><div class="info-card__title">Obuka prije vožnje</div><div class="info-card__text">Prije polaska prolazimo kratku obuku na ravnom terenu dok ne savladate sve kontrole. Brzo i bez stresa.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="page-section page-section--border reveal">
+  <div class="container" style="text-align:center">
+    <h2 class="section-title">Sve jasno?</h2>
+    <p class="section-desc" style="margin:0.5rem auto 1.5rem;text-align:center">Odaberi quad, datum i broj vozača — mi potvrđujemo u minutama.</p>
+    <button class="btn btn--accent" onclick="openBooking()">Rezerviraj vožnju →</button>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="bookingModal" onclick="if(event.target===this)closeBooking()"><div class="modal"><button class="modal__close" onclick="closeBooking()">✕</button><div class="modal__title">Rezerviraj vožnju</div><div class="modal__sub">Odaberi quadove i pošalji WhatsApp poruku</div><div class="modal__group"><label class="modal__label">Trajanje</label><div class="modal__toggle" id="durationToggle"><button class="modal__toggle-btn active" data-dur="half" onclick="setDuration('half')">Pola dana<span class="toggle-price">6h</span></button><button class="modal__toggle-btn" data-dur="full" onclick="setDuration('full')">Cijeli dan<span class="toggle-price">12h</span></button></div></div><div class="modal__group"><label class="modal__label">Datum</label><input type="date" class="modal__input" id="bookDate"></div><div class="modal__group"><label class="modal__label">Odaberi quadove</label><div class="quad-picker"><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Segway AT5L</div><div class="quad-row__meta">€130 / €200 · max 4</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('segway',-1)">−</button><span class="modal__stepper-val" id="count-segway">0</span><button class="modal__stepper-btn" onclick="changeCount('segway',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 550L</div><div class="quad-row__meta">€130 / €200 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai550',-1)">−</button><span class="modal__stepper-val" id="count-linhai550">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai550',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 650 Landforce</div><div class="quad-row__meta">€180 / €250 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai650',-1)">−</button><span class="modal__stepper-val" id="count-linhai650">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai650',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 1000</div><div class="quad-row__meta">€250 / €350 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai1000',-1)">−</button><span class="modal__stepper-val" id="count-linhai1000">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai1000',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Dječji quad</div><div class="quad-row__meta">€100 / €150 · max 2 · 6+ god</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('kids',-1)">−</button><span class="modal__stepper-val" id="count-kids">0</span><button class="modal__stepper-btn" onclick="changeCount('kids',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Dječji quad — 3h kraća</div><div class="quad-row__meta">€60 · max 2 · 6+ god</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('kids3h',-1)">−</button><span class="modal__stepper-val" id="count-kids3h">0</span><button class="modal__stepper-btn" onclick="changeCount('kids3h',1)">+</button></div></div></div></div><div class="modal__summary" id="bookSummary"><div class="modal__summary-empty" id="summaryEmpty">Dodajte barem jedan quad</div><div class="modal__summary-total" id="summaryTotal" style="display:none"><span>Ukupno</span><span id="sumTotal">€0</span></div></div><button class="btn btn--accent btn--block" id="bookSubmit" onclick="sendWhatsApp()" style="padding:0.85rem" disabled>Pošalji WhatsApp poruku</button><p class="modal__note">Potvrđujemo u minutama.</p></div></div>
+
+<footer class="footer"><div class="container"><div class="footer__top"><div class="footer__brand"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:52px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a></div><div><div class="footer__col-title">Stranice</div><ul class="footer__links"><li><a href="quad.html">Flota</a></li><li><a href="obitelj.html">Obitelj</a></li><li><a href="cijene.html">Cijene</a></li><li><a href="rute.html">Rute</a></li></ul></div><div><div class="footer__col-title">Info</div><ul class="footer__links"><li><a href="faq.html">Pitanja</a></li><li><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a></li><li><a href="pravila.html">Pravila najma</a></li></ul></div><div><div class="footer__col-title">Kontakt</div><ul class="footer__links"><li><a href="https://wa.me/385955442541">WhatsApp</a></li><li><a href="tel:+385955442541">+385 95 544 2541</a></li></ul></div></div><div class="footer__bottom"><p>© 2026 Quad Rent Zagreb.</p><p>Velikopoljska 22A, Veliko Polje, 10010 Zagreb</p></div></div></footer>
+
+<script src="main.js"></script>
+</body>
+</html>
