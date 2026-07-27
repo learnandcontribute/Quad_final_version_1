@@ -129,7 +129,18 @@ function setBookingMode(mode) {
   if (mode !== 'individual' && mode !== 'tour') mode = 'individual';
   booking.mode = mode;
 
-  // Update tab-ova
+  // Ako je stranica zaključana na "tour" (data-booking-mode="tour" na body-u),
+  // sakrijemo toggle jer korisnik nema izbora — samo vođena tura.
+  const bodyMode = document.body.getAttribute('data-booking-mode');
+  const tourLocked = (bodyMode === 'tour');
+
+  const toggleGroup = document.getElementById('modeToggle');
+  if (toggleGroup) {
+    const wrapGroup = toggleGroup.closest('.modal__group');
+    if (wrapGroup) wrapGroup.style.display = tourLocked ? 'none' : '';
+  }
+
+  // Update tab-ova (za slučaj da toggle nije sakriven)
   document.querySelectorAll('#modeToggle .modal__toggle-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.mode === mode);
   });

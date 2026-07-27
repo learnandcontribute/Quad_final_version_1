@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Poklon bon za quad avanturu — poklonite čisti adrenalin i uspomene koje traju zauvijek. Bon vrijedi 12 mjeseci, od €100 do €1000.">
+<title>Poklon bon za quad avanturu — Quad Rent Zagreb</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Mobile-only quick nav */
+  .nav__mobile-quick{display:inline-flex;align-items:center;gap:0.25rem;height:36px;padding:0 0.65rem;font-family:var(--font-d);font-weight:700;font-size:0.82rem;color:var(--accent);text-decoration:none;border-radius:var(--r-md);letter-spacing:0.05em;transition:background 0.2s;line-height:1}
+  .nav__mobile-quick:hover{background:rgba(245,166,35,0.1)}
+  .nav__mobile-quick--gift{padding:0 0.6rem}
+  .nav__mobile-quick__emoji{font-size:1rem;line-height:1}
+  @media(min-width:700px){.nav__mobile-quick{display:none}}
+
+  /* Poklon hero — kompaktan, sadržaj odmah ispod nav-a */
+  .gift-hero{min-height:auto !important;padding:5rem 0 2rem;align-items:flex-start !important}
+  .gift-hero .hero__content{padding-bottom:0 !important}
+  .gift-hero .hero__headline{max-width:900px;font-size:clamp(1.6rem,4.4vw,2.8rem) !important;line-height:1.1}
+  .gift-hero .hero__sub{max-width:640px}
+  .gift-hero__chip{display:inline-block;padding:0.4rem 0.9rem;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.35);border-radius:999px;font-family:var(--font-d);font-weight:700;font-size:0.6rem;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.2rem}
+
+  /* Numerirani koraci */
+  .steps-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.5rem}
+  .step-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.3rem 1.4rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.25s}
+  .step-card:hover{border-color:rgba(245,166,35,0.35)}
+  .step-num{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.4);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:800;font-size:0.95rem;line-height:1}
+  .step-title{font-family:var(--font-d);font-weight:600;font-size:0.9rem;color:var(--text);line-height:1.55}
+
+  /* Info lista */
+  .info-list{list-style:none;padding:0;margin:1.4rem 0 0 0}
+  .info-list li{display:flex;gap:0.9rem;align-items:flex-start;padding:0.85rem 0;border-bottom:1px solid var(--border);font-size:0.83rem;color:var(--text);line-height:1.6}
+  .info-list li:last-child{border-bottom:none}
+  .info-list li::before{content:'✓';flex-shrink:0;color:var(--accent);font-weight:700;font-size:0.9rem;margin-top:0.05rem}
+  .info-list strong{color:var(--accent);font-weight:600}
+
+  /* Obrazac */
+  .gift-form{background:linear-gradient(135deg,rgba(245,166,35,0.08) 0%,rgba(245,166,35,0.02) 100%);border:1px solid rgba(245,166,35,0.28);border-radius:var(--r-xl);padding:1.8rem 1.5rem;display:grid;gap:1rem}
+  .gift-form__group{display:flex;flex-direction:column;gap:0.4rem}
+  .gift-form__label{font-family:var(--font-d);font-weight:600;font-size:0.7rem;color:var(--text-2);letter-spacing:0.04em;text-transform:uppercase}
+  .gift-form__label small{color:var(--text-3);font-weight:400;text-transform:none;letter-spacing:0}
+  .gift-form__input,.gift-form__select,.gift-form__textarea{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);padding:0.75rem 0.9rem;font-family:var(--font-d);font-size:0.85rem;color:var(--text);transition:border-color 0.2s;font-weight:500;box-sizing:border-box}
+  .gift-form__input:focus,.gift-form__select:focus,.gift-form__textarea:focus{outline:none;border-color:var(--accent)}
+  .gift-form__textarea{resize:vertical;min-height:80px;line-height:1.5;font-family:inherit}
+  .gift-form__note{font-size:0.65rem;color:var(--text-3);text-align:center;margin:0.6rem 0 0}
+
+  @media(min-width:700px){
+    .steps-grid{grid-template-columns:repeat(3,1fr)}
+    .step-card{flex-direction:column;gap:0.8rem;padding:1.5rem 1.4rem}
+    .gift-form{padding:2.2rem 2rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="toggleMenu()">Početna</a><a href="quad.html" onclick="toggleMenu()">Flota</a><a href="obitelj.html" onclick="toggleMenu()">Obitelj</a><a href="cijene.html" onclick="toggleMenu()">Cijene</a><a href="rute.html" onclick="toggleMenu()">Rute</a><a href="faq.html" onclick="toggleMenu()">Pitanja</a><a href="o-nama.html" onclick="toggleMenu()">O nama</a><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a><a href="blog.html" onclick="toggleMenu()">Blog</a><a href="partneri.html" onclick="toggleMenu()">Partneri</a></div>
+<nav class="nav" id="nav"><div class="container nav__inner"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:44px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a><div class="nav__links"><a href="quad.html">Flota</a><a href="obitelj.html">Obitelj</a><a href="cijene.html">Cijene</a><a href="rute.html">Rute</a><a href="faq.html">Pitanja</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a><a href="blog.html">Blog</a><a href="partneri.html">Partneri</a></div><button class="btn btn--accent btn--sm nav__book" onclick="openBooking()">Rezerviraj</button><a href="partneri.html" class="nav__mobile-quick" aria-label="B2B — Partneri">B2B</a><a href="poklon.html" class="nav__mobile-quick nav__mobile-quick--gift" aria-label="Poklon avanture"><span class="nav__mobile-quick__emoji">🎁</span>BON</a><button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button></div></nav>
+
+<section class="hero hero--short gift-hero">
+  <div class="hero__bg" style="background:var(--bg-alt)"></div>
+  <div class="container hero__content">
+    <div class="gift-hero__chip">🎁 Poklon bon</div>
+    <h1 class="hero__headline">Tražite poklon koji neće skupljati prašinu?<br>Poklonite čisti adrenalin i uspomene koje traju zauvijek!</h1>
+    <p class="hero__sub">Poklonite pravu quad avanturu — nezaboravno iskustvo umjesto još jednog predmeta koji će samo stajati u ormaru.</p>
+  </div>
+</section>
+
+<section class="page-section reveal">
+  <div class="container">
+    <div class="section-overline">Postupak</div>
+    <h2 class="section-title mt-1">Kako funkcionira?</h2>
+    <p class="section-desc mt-2">Poklon bon je gotov u tri jednostavna koraka.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-title">Odaberite željeni bon i pošaljite upit.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-title">Pošaljite nam ime primatelja i po želji kratku posvetu.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-title">Nakon uplate šaljemo digitalni bon na e-mail. Moguće je i osobno preuzimanje tiskane verzije.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-section page-section--border reveal">
+  <div class="container">
+    <div class="section-overline">Uvjeti</div>
+    <h2 class="section-title mt-1">Što trebate znati</h2>
+    <ul class="info-list">
+      <li><span><strong>Bon vrijedi 12 mjeseci</strong> od datuma izdavanja.</span></li>
+      <li><span>Može se iskoristiti za bilo koji raspoloživi termin uz prethodnu rezervaciju.</span></li>
+      <li><span>Svi quadovi registrirani su za dvije osobe — primatelj može povesti suputnika.</span></li>
+      <li><span>Za upravljanje quadom potrebna je <strong>B kategorija</strong>. Suputnik se može voziti bez vozačke dozvole.</span></li>
+      <li><span>Ako primatelj želi drugu rutu ili dulji najam, razliku jednostavno nadoplati prilikom rezervacije.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="page-section reveal">
+  <div class="container" style="max-width:720px">
+    <div class="section-overline">Narudžba</div>
+    <h2 class="section-title mt-1">Naručite poklon bon</h2>
+    <p class="section-desc mt-2">Ispunite obrazac ispod ili nas kontaktirajte putem WhatsAppa. Digitalni bon šaljemo vrlo brzo nakon potvrde uplate.</p>
+
+    <div class="gift-form" style="margin-top:1.4rem">
+      <div class="gift-form__group">
+        <label class="gift-form__label" for="giftAmount">Vrijednost poklon bona</label>
+        <select class="gift-form__select" id="giftAmount">
+          <option value="100">€100</option>
+          <option value="200">€200</option>
+          <option value="300">€300</option>
+          <option value="400">€400</option>
+          <option value="500" selected>€500</option>
+          <option value="600">€600</option>
+          <option value="700">€700</option>
+          <option value="800">€800</option>
+          <option value="900">€900</option>
+          <option value="1000">€1000</option>
+        </select>
+      </div>
+
+      <div class="gift-form__group">
+        <label class="gift-form__label" for="giftRecipient">Ime primatelja <small>(opcionalno)</small></label>
+        <input type="text" class="gift-form__input" id="giftRecipient" placeholder="Npr. Ivan Horvat">
+      </div>
+
+      <div class="gift-form__group">
+        <label class="gift-form__label" for="giftDedication">Posveta <small>(opcionalno)</small></label>
+        <textarea class="gift-form__textarea" id="giftDedication" placeholder="Npr. Sretan rođendan! Uživaj u avanturi."></textarea>
+      </div>
+
+      <button class="btn btn--accent btn--block" style="padding:0.85rem;margin-top:0.4rem" onclick="sendGiftRequest()">Pošalji upit putem WhatsAppa →</button>
+      <p class="gift-form__note">Potvrđujemo u minutama.</p>
+    </div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="bookingModal" onclick="if(event.target===this)closeBooking()"><div class="modal"><button class="modal__close" onclick="closeBooking()">✕</button><div class="modal__title">Rezerviraj vožnju</div><div class="modal__sub">Odaberi tip vožnje i pošalji WhatsApp poruku</div><div class="modal__group"><label class="modal__label">Tip vožnje</label><div class="modal__toggle" id="modeToggle"><button class="modal__toggle-btn active" data-mode="individual" onclick="setBookingMode('individual')">Individualna vožnja<span class="toggle-price">bez vodiča</span></button><button class="modal__toggle-btn" data-mode="tour" onclick="setBookingMode('tour')">Vođena tura<span class="toggle-price">s vodičem</span></button></div></div><div class="modal__group"><label class="modal__label">Datum</label><input type="date" class="modal__input" id="bookDate"></div><div data-mode-section="individual"><div class="modal__group"><label class="modal__label">Trajanje</label><div class="modal__toggle" id="durationToggle"><button class="modal__toggle-btn active" data-dur="half" onclick="setDuration('half')">Pola dana<span class="toggle-price">6h</span></button><button class="modal__toggle-btn" data-dur="full" onclick="setDuration('full')">Cijeli dan<span class="toggle-price">12h</span></button></div></div><div class="modal__group"><label class="modal__label">Odaberi quadove</label><div class="quad-picker"><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Segway AT5L</div><div class="quad-row__meta">€130 / €200 · max 4</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('segway',-1)">−</button><span class="modal__stepper-val" id="count-segway">0</span><button class="modal__stepper-btn" onclick="changeCount('segway',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 550L</div><div class="quad-row__meta">€130 / €200 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai550',-1)">−</button><span class="modal__stepper-val" id="count-linhai550">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai550',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 650 Landforce</div><div class="quad-row__meta">€180 / €250 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai650',-1)">−</button><span class="modal__stepper-val" id="count-linhai650">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai650',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 1000</div><div class="quad-row__meta">€250 / €350 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai1000',-1)">−</button><span class="modal__stepper-val" id="count-linhai1000">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai1000',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Dječji quad</div><div class="quad-row__meta">€100 / €150 · max 2 · 6+ god</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('kids',-1)">−</button><span class="modal__stepper-val" id="count-kids">0</span><button class="modal__stepper-btn" onclick="changeCount('kids',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Dječji quad — 3h kraća</div><div class="quad-row__meta">€60 · max 2 · 6+ god</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('kids3h',-1)">−</button><span class="modal__stepper-val" id="count-kids3h">0</span><button class="modal__stepper-btn" onclick="changeCount('kids3h',1)">+</button></div></div></div></div></div><div data-mode-section="tour" style="display:none"><div style="background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.25);border-radius:var(--r-md);padding:0.75rem 0.9rem;margin:0 0 1rem"><div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.7rem;color:var(--text-2);letter-spacing:0.02em"><span>💰 <strong style="color:var(--accent)">€200</strong> po vozilu</span><span>👥 do 2 osobe / vozilo</span><span>🚵 s vodičem</span></div></div><div class="modal__group"><label class="modal__label">Broj vozila u vašoj grupi</label><div class="quad-picker"><div class="quad-row" style="padding:0.75rem 0.9rem"><div class="quad-row__info"><div class="quad-row__name">Vozilo + vodič</div><div class="quad-row__meta">€200 po vozilu · do 2 osobe · max 4</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeTourCount(-1)">−</button><span class="modal__stepper-val" id="tourCountVal">0</span><button class="modal__stepper-btn" onclick="changeTourCount(1)">+</button></div></div></div></div></div><div class="modal__summary" id="bookSummary"><div class="modal__summary-empty" id="summaryEmpty">Dodajte barem jedan quad</div><div class="modal__summary-total" id="summaryTotal" style="display:none"><span>Ukupno</span><span id="sumTotal">€0</span></div></div><button class="btn btn--accent btn--block" id="bookSubmit" onclick="sendWhatsApp()" style="padding:0.85rem" disabled>Pošalji WhatsApp poruku</button><p class="modal__note">Potvrđujemo u minutama.</p></div></div>
+
+<footer class="footer"><div class="container"><div class="footer__top"><div class="footer__brand"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:52px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a></div><div><div class="footer__col-title">Stranice</div><ul class="footer__links"><li><a href="quad.html">Flota</a></li><li><a href="obitelj.html">Obitelj</a></li><li><a href="cijene.html">Cijene</a></li><li><a href="rute.html">Rute</a></li></ul></div><div><div class="footer__col-title">Info</div><ul class="footer__links"><li><a href="faq.html">Pitanja</a></li><li><a href="o-nama.html">O nama</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div><div><div class="footer__col-title">Kontakt</div><ul class="footer__links"><li><a href="https://wa.me/385955442541">WhatsApp</a></li><li><a href="tel:+385955442541">+385 95 544 2541</a></li></ul></div></div><div class="footer__bottom"><p>© 2026 Quad Rent Zagreb.</p><p>Velikopoljska 22A, Veliko Polje, 10010 Zagreb</p></div></div></footer>
+
+<script src="main.js"></script>
+<script>
+  // Šalje upit za poklon bon preko WhatsApp-a
+  function sendGiftRequest() {
+    var amountEl    = document.getElementById('giftAmount');
+    var recipientEl = document.getElementById('giftRecipient');
+    var dedEl       = document.getElementById('giftDedication');
+
+    var amount     = amountEl    ? amountEl.value           : '';
+    var recipient  = recipientEl ? recipientEl.value.trim() : '';
+    var dedication = dedEl       ? dedEl.value.trim()       : '';
+
+    var msg = 'Bok! Želim naručiti poklon bon:\n\n';
+    msg += '🎁 Vrijednost: €' + amount + '\n';
+    if (recipient) msg += '👤 Primatelj: ' + recipient + '\n';
+    if (dedication) msg += '📝 Posveta: ' + dedication + '\n';
+    msg += '\nMolim upute za uplatu i način preuzimanja bona. Hvala!';
+
+    window.open('https://wa.me/385955442541?text=' + encodeURIComponent(msg), '_blank');
+  }
+</script>
+</body>
+</html>

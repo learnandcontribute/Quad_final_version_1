@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="B2B partnerstvo za uvoznike moto brendova — najviši standard prezentacije flote uz ~5.000 posjeta webu mjesečno. Zagreb.">
+<title>Partnerstvo za uvoznike — Quad Rent Zagreb</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Mobile-only quick nav: B2B + BON poklon (lijevo od hamburgera) */
+  .nav__mobile-quick{display:inline-flex;align-items:center;gap:0.25rem;height:36px;padding:0 0.65rem;font-family:var(--font-d);font-weight:700;font-size:0.82rem;color:var(--accent);text-decoration:none;border-radius:var(--r-md);letter-spacing:0.05em;transition:background 0.2s;line-height:1}
+  .nav__mobile-quick:hover{background:rgba(245,166,35,0.1)}
+  .nav__mobile-quick--gift{padding:0 0.6rem}
+  .nav__mobile-quick__emoji{font-size:1rem;line-height:1}
+  @media(min-width:700px){.nav__mobile-quick{display:none}}
+
+  /* Partner page — B2B specific */
+  .partner-hero{min-height:auto !important;padding:5rem 0 2rem;align-items:flex-start !important}
+  .partner-hero .hero__content{padding-bottom:0 !important}
+  .partner-hero .hero__headline{max-width:900px;font-size:clamp(1.7rem,4.4vw,3rem) !important}
+  .partner-hero .hero__sub{max-width:640px}
+
+  /* Stat karta */
+  .stat-card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:var(--r-lg);
+    padding:1.6rem 1.4rem;
+    text-align:center;
+    transition:border-color 0.25s;
+  }
+  .stat-card:hover{border-color:rgba(245,166,35,0.25)}
+  .stat-card__num{
+    font-family:var(--font-d);
+    font-weight:700;
+    font-size:clamp(2.2rem,4.5vw,3rem);
+    color:var(--accent);
+    line-height:1;
+    margin-bottom:0.6rem;
+    letter-spacing:-0.02em;
+  }
+  .stat-card__label{
+    font-size:0.7rem;
+    color:var(--text-2);
+    line-height:1.55;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    font-family:var(--font-d);
+    font-weight:600;
+  }
+
+  /* Bullet lista s narančastom točkicom */
+  .point-list{list-style:none;padding:0;margin:1.4rem 0 0 0}
+  .point-list li{
+    display:flex;
+    gap:0.9rem;
+    align-items:flex-start;
+    padding:1rem 0;
+    border-bottom:1px solid var(--border);
+    font-size:0.85rem;
+    color:var(--text);
+    line-height:1.6;
+  }
+  .point-list li:last-child{border-bottom:none}
+  .point-list li::before{
+    content:'';
+    flex-shrink:0;
+    width:8px;
+    height:8px;
+    background:var(--accent);
+    border-radius:50%;
+    margin-top:0.55rem;
+  }
+  .point-list li strong{color:var(--accent);font-weight:600}
+
+  /* CTA callout */
+  .partner-cta{
+    background:linear-gradient(135deg,rgba(245,166,35,0.12) 0%,rgba(245,166,35,0.04) 100%);
+    border:1px solid rgba(245,166,35,0.28);
+    border-radius:var(--r-xl);
+    padding:3rem 1.8rem;
+    text-align:center;
+  }
+  .partner-cta__title{
+    font-family:var(--font-d);
+    font-weight:700;
+    font-size:clamp(1.6rem,3.6vw,2.4rem);
+    margin-bottom:1rem;
+    line-height:1.15;
+  }
+  .partner-cta__body{
+    font-size:0.9rem;
+    color:var(--text-2);
+    line-height:1.7;
+    max-width:640px;
+    margin:0 auto 1.8rem;
+  }
+  .partner-cta__actions{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap}
+
+  @media(max-width:699px){
+    .partner-hero{min-height:auto;padding:5rem 0 1.5rem}
+    .partner-cta{padding:2.2rem 1.2rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="toggleMenu()">Početna</a><a href="quad.html" onclick="toggleMenu()">Flota</a><a href="obitelj.html" onclick="toggleMenu()">Obitelj</a><a href="cijene.html" onclick="toggleMenu()">Cijene</a><a href="rute.html" onclick="toggleMenu()">Rute</a><a href="faq.html" onclick="toggleMenu()">Pitanja</a><a href="o-nama.html" onclick="toggleMenu()">O nama</a><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a><a href="blog.html" onclick="toggleMenu()">Blog</a><a href="partneri.html" onclick="toggleMenu()">Partneri</a></div>
+
+<nav class="nav" id="nav"><div class="container nav__inner"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:44px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a><div class="nav__links"><a href="quad.html">Flota</a><a href="obitelj.html">Obitelj</a><a href="cijene.html">Cijene</a><a href="rute.html">Rute</a><a href="faq.html">Pitanja</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a><a href="blog.html">Blog</a><a href="partneri.html">Partneri</a></div><button class="btn btn--accent btn--sm nav__book" onclick="openBooking()">Rezerviraj</button><a href="partneri.html" class="nav__mobile-quick" aria-label="B2B — Partneri">B2B</a><a href="poklon.html" class="nav__mobile-quick nav__mobile-quick--gift" aria-label="Poklon avanture"><span class="nav__mobile-quick__emoji">🎁</span>BON</a><button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button></div></nav>
+
+<!-- HERO -->
+<section class="hero hero--short partner-hero">
+  <div class="hero__bg" style="background:var(--bg-alt)"></div>
+  <div class="container hero__content">
+    <div class="section-overline">B2B · Za uvoznike i moto brendove</div>
+    <h1 class="hero__headline" style="margin-top:0.6rem">Zašto vodeći moto brendovi biraju nas za prezentaciju u Zagrebu?</h1>
+    <p class="hero__sub">Prezentacijski partner s premium standardom održavanja, mjerljivim marketinškim dosegom i logistikom u srcu Novog Zagreba.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="page-section reveal">
+  <div class="container">
+    <div class="section-overline">Ključne brojke</div>
+    <h2 class="section-title mt-1">Tri broja koja govore sve</h2>
+    <p class="section-desc mt-2">Ako razmatrate s kim postaviti svoje modele u Zagrebu — ovo su tri jedina broja koja su bitna:</p>
+    <div class="grid-3" style="margin-top:1.6rem;gap:1rem">
+      <div class="stat-card">
+        <div class="stat-card__num">~5.000</div>
+        <div class="stat-card__label">Posjeta mjesečno<br>quadrentzagreb.hr</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num">10</div>
+        <div class="stat-card__label">Vozila u aktivnoj<br>rotaciji flote</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__num">20 min</div>
+        <div class="stat-card__label">Od centra Zagreba,<br>bez gradskih gužvi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOKACIJA I LOGISTIKA -->
+<section class="page-section page-section--border reveal">
+  <div class="container">
+    <div class="section-overline">Lokacija i logistika</div>
+    <h2 class="section-title mt-1">Zagreb i okolica — bez gradskih gužvi</h2>
+    <p class="section-desc mt-2">Baza u Velikom Polju (Novi Zagreb) izabrana je namjerno: dovoljno blizu grada da klijenti dolaze u minutama, dovoljno izvan njega da vaše vozilo bude izloženo bez asfaltnog stresa gradskog salona.</p>
+    <ul class="point-list">
+      <li><span><strong>20 minuta od centra Zagreba</strong> — klijenti iz grada dolaze taksijem, Uberom ili vlastitim autom, direktno.</span></li>
+      <li><span><strong>Direktan pristup glavnim autocestama</strong> — klijenti iz cijele Hrvatske i regije (Slovenija, BiH) stižu bez ulaska u grad.</span></li>
+      <li><span><strong>Prostrani vanjski parking i garažni prostor</strong> — vozila su izložena klijentima i zaštićena od vremena kada nisu.</span></li>
+      <li><span><strong>Radno vrijeme 07:00 – 22:00, svaki dan u tjednu</strong> — vaš brend je fizički vidljiv 15 sati dnevno, 365 dana godišnje.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- STANDARD ODRŽAVANJA -->
+<section class="page-section reveal">
+  <div class="container">
+    <div class="section-overline">Standard održavanja</div>
+    <h2 class="section-title mt-1">Vozila kao iz salona. Uvijek.</h2>
+    <p class="section-desc mt-2">Ovo je najbitnija stavka za svakog uvoznika. Vaš brend ne smije biti prezentiran kroz vozilo prekriveno blatom, ogrebotinama i tragom prošlog vikenda. Kod nas — nije.</p>
+    <ul class="point-list">
+      <li><span><strong>Detailing nakon svakog najma</strong> — pranje, poliranje i unutrašnje čišćenje prije nego što vozilo vidi sljedećeg klijenta. Bez iznimke.</span></li>
+      <li><span><strong>Kompletan tehnički pregled prije svake predaje</strong> — provjera tekućina, kočnica, guma, ovjesa i elektronike.</span></li>
+      <li><span><strong>Servis prema tvorničkim preporukama, s originalnim dijelovima</strong> — bez kompromisa u dijelovima ili intervalima.</span></li>
+      <li><span><strong>16 godina iskustva u auto-industriji</strong> — perfekcionizam koji smo brusili na premium automobilima primjenjujemo i na quadove.</span></li>
+      <li><span><strong>Rezultat</strong> — svaki klijent vaše vozilo vidi u stanju u kojem je izašlo iz salona, a ne u onom u kojem su ga ostavili prethodni vozači.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- MARKETINŠKI DOSEG -->
+<section class="page-section page-section--border reveal">
+  <div class="container">
+    <div class="section-overline">Marketinški doseg</div>
+    <h2 class="section-title mt-1">~5.000 posjeta mjesečno — a vaš brend je u središtu</h2>
+    <p class="section-desc mt-2">Vozilo koje stoji u salonu je trošak. Vozilo koje aktivno stvara sadržaj i doseg je marketinška investicija koja se sama vrati.</p>
+    <ul class="point-list">
+      <li><span><strong>~5.000 posjetitelja mjesečno</strong> na quadrentzagreb.hr — organski promet, bez plaćene akvizicije.</span></li>
+      <li><span><strong>SEO pozicioniranje</strong> za ključne pojmove: "quad Zagreb", "najam quadova", "off-road Zagreb" i sličnе.</span></li>
+      <li><span><strong>Google Business profil</strong> s aktivnim interakcijama i redovitim recenzijama zadovoljnih klijenata.</span></li>
+      <li><span><strong>Blog i sadržajni marketing</strong> — svaki članak spominje modele iz flote i povlači organski promet mjesecima.</span></li>
+      <li><span><strong>WhatsApp i društvene mreže</strong> — svaka rezervacija je prilika da se vaš brend spomene, prikaže i preporuči.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="page-section reveal">
+  <div class="container">
+    <div class="partner-cta">
+      <div class="partner-cta__title">Naša flota se širi.</div>
+      <p class="partner-cta__body">Ako ste uvoznik i tražite partnera koji će vaš brend predstaviti kroz najviši standard prezentacije, a ne samo držati u prašnjavom kutu — javite nam se.</p>
+      <div class="partner-cta__actions">
+        <a href="https://wa.me/385955442541?text=Bok!%20Zovem%20u%20ime%20uvoznika%20—%20zanima%20me%20partnerstvo%20za%20prezentaciju%20naših%20modela." target="_blank" rel="noopener" class="btn btn--accent">WhatsApp za partnere →</a>
+        <a href="tel:+385955442541" class="btn btn--ghost">+385 95 544 2541</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL (za slučaj da netko klikne Rezerviraj u navu) -->
+<div class="modal-overlay" id="bookingModal" onclick="if(event.target===this)closeBooking()"><div class="modal"><button class="modal__close" onclick="closeBooking()">✕</button><div class="modal__title">Rezerviraj vožnju</div><div class="modal__sub">Odaberi tip vožnje i pošalji WhatsApp poruku</div><div class="modal__group"><label class="modal__label">Tip vožnje</label><div class="modal__toggle" id="modeToggle"><button class="modal__toggle-btn active" data-mode="individual" onclick="setBookingMode('individual')">Individualna vožnja<span class="toggle-price">bez vodiča</span></button><button class="modal__toggle-btn" data-mode="tour" onclick="setBookingMode('tour')">Vođena tura<span class="toggle-price">s vodičem</span></button></div></div><div class="modal__group"><label class="modal__label">Datum</label><input type="date" class="modal__input" id="bookDate"></div><div data-mode-section="individual"><div class="modal__group"><label class="modal__label">Trajanje</label><div class="modal__toggle" id="durationToggle"><button class="modal__toggle-btn active" data-dur="half" onclick="setDuration('half')">Pola dana<span class="toggle-price">6h</span></button><button class="modal__toggle-btn" data-dur="full" onclick="setDuration('full')">Cijeli dan<span class="toggle-price">12h</span></button></div></div><div class="modal__group"><label class="modal__label">Odaberi quadove</label><div class="quad-picker"><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Segway AT5L</div><div class="quad-row__meta">€130 / €200 · max 4</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('segway',-1)">−</button><span class="modal__stepper-val" id="count-segway">0</span><button class="modal__stepper-btn" onclick="changeCount('segway',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 550L</div><div class="quad-row__meta">€130 / €200 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai550',-1)">−</button><span class="modal__stepper-val" id="count-linhai550">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai550',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 650 Landforce</div><div class="quad-row__meta">€180 / €250 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai650',-1)">−</button><span class="modal__stepper-val" id="count-linhai650">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai650',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 1000</div><div class="quad-row__meta">€250 / €350 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai1000',-1)">−</button><span class="modal__stepper-val" id="count-linhai1000">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai1000',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Dječji quad</div><div class="quad-row__meta">€100 / €150 · max 2 · 6+ god</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('kids',-1)">−</button><span class="modal__stepper-val" id="count-kids">0</span><button class="modal__stepper-btn" onclick="changeCount('kids',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Dječji quad — 3h kraća</div><div class="quad-row__meta">€60 · max 2 · 6+ god</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('kids3h',-1)">−</button><span class="modal__stepper-val" id="count-kids3h">0</span><button class="modal__stepper-btn" onclick="changeCount('kids3h',1)">+</button></div></div></div></div></div><div data-mode-section="tour" style="display:none"><div style="background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.25);border-radius:var(--r-md);padding:0.75rem 0.9rem;margin:0 0 1rem"><div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.7rem;color:var(--text-2);letter-spacing:0.02em"><span>💰 <strong style="color:var(--accent)">€200</strong> po vozilu</span><span>👥 do 2 osobe / vozilo</span><span>🚵 s vodičem</span></div></div><div class="modal__group"><label class="modal__label">Broj vozila u vašoj grupi</label><div class="quad-picker"><div class="quad-row" style="padding:0.75rem 0.9rem"><div class="quad-row__info"><div class="quad-row__name">Vozilo + vodič</div><div class="quad-row__meta">€200 po vozilu · do 2 osobe · max 4</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeTourCount(-1)">−</button><span class="modal__stepper-val" id="tourCountVal">0</span><button class="modal__stepper-btn" onclick="changeTourCount(1)">+</button></div></div></div></div></div><div class="modal__summary" id="bookSummary"><div class="modal__summary-empty" id="summaryEmpty">Dodajte barem jedan quad</div><div class="modal__summary-total" id="summaryTotal" style="display:none"><span>Ukupno</span><span id="sumTotal">€0</span></div></div><button class="btn btn--accent btn--block" id="bookSubmit" onclick="sendWhatsApp()" style="padding:0.85rem" disabled>Pošalji WhatsApp poruku</button><p class="modal__note">Potvrđujemo u minutama.</p></div></div>
+
+<footer class="footer"><div class="container"><div class="footer__top"><div class="footer__brand"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:52px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a></div><div><div class="footer__col-title">Stranice</div><ul class="footer__links"><li><a href="quad.html">Flota</a></li><li><a href="obitelj.html">Obitelj</a></li><li><a href="cijene.html">Cijene</a></li><li><a href="rute.html">Rute</a></li></ul></div><div><div class="footer__col-title">Info</div><ul class="footer__links"><li><a href="faq.html">Pitanja</a></li><li><a href="o-nama.html">O nama</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div><div><div class="footer__col-title">Kontakt</div><ul class="footer__links"><li><a href="https://wa.me/385955442541">WhatsApp</a></li><li><a href="tel:+385955442541">+385 95 544 2541</a></li></ul></div></div><div class="footer__bottom"><p>© 2026 Quad Rent Zagreb.</p><p>Velikopoljska 22A, Veliko Polje, 10010 Zagreb</p></div></div></footer>
+
+<script src="main.js"></script>
+</body>
+</html>

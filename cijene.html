@@ -7,6 +7,12 @@
 <title>Cijene — Quad Rent Zagreb</title>
 <link rel="stylesheet" href="style.css">
 <style>
+  /* Mobile-only quick nav: B2B + Poklon (lijevo od hamburgera) */
+  .nav__mobile-quick{display:inline-flex;align-items:center;justify-content:center;height:36px;padding:0 0.6rem;font-family:var(--font-d);font-weight:700;font-size:0.68rem;color:var(--accent);text-decoration:none;border-radius:var(--r-md);letter-spacing:0.03em;transition:background 0.2s}
+  .nav__mobile-quick:hover{background:rgba(245,166,35,0.1)}
+  .nav__mobile-quick--gift{font-size:1.05rem;padding:0 0.4rem}
+  @media(min-width:700px){.nav__mobile-quick{display:none}}
+
   /* ═══ Pricing card refinements ═══ */
   .pricing-card{transition:border-color 0.25s ease,transform 0.25s ease,box-shadow 0.25s ease;cursor:default;position:relative}
   .pricing-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 10px 30px rgba(245,166,35,0.12)}
@@ -61,13 +67,17 @@
   /* Since hero is removed, give first section extra top padding so content clears the fixed nav */
   body > section.page-section:first-of-type{padding-top:6rem}
   @media(max-width:699px){body > section.page-section:first-of-type{padding-top:5rem}}
+
+  /* Gift link ispod svakog quada */
+  .pricing-card__gift{display:block;text-align:center;font-family:var(--font-d);font-weight:600;font-size:0.65rem;color:var(--accent);letter-spacing:0.03em;padding:0.55rem 0;margin-top:0.4rem;text-decoration:none;transition:opacity 0.2s;text-transform:uppercase}
+  .pricing-card__gift:hover{opacity:0.75}
 </style>
 </head>
 <body>
 
 <div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="toggleMenu()">Početna</a><a href="quad.html" onclick="toggleMenu()">Flota</a><a href="obitelj.html" onclick="toggleMenu()">Obitelj</a><a href="cijene.html" onclick="toggleMenu()">Cijene</a><a href="rute.html" onclick="toggleMenu()">Rute</a><a href="faq.html" onclick="toggleMenu()">Pitanja</a><a href="o-nama.html" onclick="toggleMenu()">O nama</a><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a><a href="blog.html" onclick="toggleMenu()">Blog</a></div>
 
-<nav class="nav" id="nav"><div class="container nav__inner"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:44px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a><div class="nav__links"><a href="quad.html">Flota</a><a href="obitelj.html">Obitelj</a><a href="cijene.html" class="active">Cijene</a><a href="rute.html">Rute</a><a href="faq.html">Pitanja</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a><a href="blog.html">Blog</a></div><button class="btn btn--accent btn--sm nav__book" onclick="openBooking()">Rezerviraj</button><button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button></div></nav>
+<nav class="nav" id="nav"><div class="container nav__inner"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:44px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a><div class="nav__links"><a href="quad.html">Flota</a><a href="obitelj.html">Obitelj</a><a href="cijene.html" class="active">Cijene</a><a href="rute.html">Rute</a><a href="faq.html">Pitanja</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a><a href="blog.html">Blog</a></div><button class="btn btn--accent btn--sm nav__book" onclick="openBooking()">Rezerviraj</button><a href="partneri.html" class="nav__mobile-quick" aria-label="B2B — Partneri">B2B</a><a href="poklon.html" class="nav__mobile-quick nav__mobile-quick--gift" aria-label="Poklon avanture">🎁</a><button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button></div></nav>
 
 <!-- ═══════════════════════════════════════════ -->
 <!-- KATEGORIJA 1: SLOBODNI NAJAM                 -->
@@ -108,6 +118,7 @@
           </div>
         </div>
         <button class="pricing-card__cta-btn mt-3" onclick="openBooking('segway','half')">Rezerviraj Segway →</button>
+        <a href="poklon.html" class="pricing-card__gift">🎁 Pokloni avanturu</a>
       </div>
 
       <!-- Linhai 550L -->
@@ -135,6 +146,7 @@
           </div>
         </div>
         <button class="pricing-card__cta-btn mt-3" onclick="openBooking('linhai550','half')">Rezerviraj Linhai 550 →</button>
+        <a href="poklon.html" class="pricing-card__gift">🎁 Pokloni avanturu</a>
       </div>
 
       <!-- Linhai 650 Pro Landforce -->
@@ -162,6 +174,7 @@
           </div>
         </div>
         <button class="pricing-card__cta-btn mt-3" onclick="openBooking('linhai650','half')">Rezerviraj Linhai 650 →</button>
+        <a href="poklon.html" class="pricing-card__gift">🎁 Pokloni avanturu</a>
       </div>
 
       <!-- Linhai 1000 -->
@@ -189,6 +202,7 @@
           </div>
         </div>
         <button class="pricing-card__cta-btn mt-3" onclick="openBooking('linhai1000','half')">Rezerviraj Linhai 1000 →</button>
+        <a href="poklon.html" class="pricing-card__gift">🎁 Pokloni avanturu</a>
       </div>
 
       <!-- Dječji quad — 3 tier pricing -->
@@ -220,6 +234,7 @@
           </div>
         </div>
         <button class="pricing-card__cta-btn mt-3" onclick="openBooking('kids','half')">Rezerviraj dječji quad →</button>
+        <a href="poklon.html" class="pricing-card__gift">🎁 Pokloni avanturu</a>
       </div>
 
     </div>

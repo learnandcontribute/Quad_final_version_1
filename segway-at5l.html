@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Segway AT5L EPS — najmoderniji ATV u našoj floti. Elektronički servo upravljač, mekano paljenje i najjednostavnije upravljanje. Za rekreativce i prve ozbiljne vožnje quadom.">
+<meta name="description" content="Segway AT5L EPS — najmoderniji ATV u našoj floti za najam. Elektronički servo upravljač, mekano paljenje i najjednostavnije upravljanje. Idealan za prve vožnje i rekreativce.">
 <title>Segway AT5L EPS — Karakteristike i specifikacije | Quad Rent Zagreb</title>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -21,6 +21,8 @@
   .feature-card__icon{font-size:1.3rem;margin-bottom:0.5rem}
   .feature-card__title{font-family:var(--font-d);font-weight:700;font-size:0.92rem;color:var(--accent);margin-bottom:0.4rem}
   .feature-card__text{font-size:0.72rem;color:var(--text-2);line-height:1.6}
+    .conclusion-callout{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.5rem;font-size:0.85rem;color:var(--text-2);line-height:1.65}
+  .conclusion-callout strong{color:var(--text);font-weight:600}
   .homolog-callout{background:var(--accent-glow);border:1px solid rgba(245,166,35,0.2);border-radius:var(--r-lg);padding:1.5rem;display:flex;gap:1rem;align-items:flex-start}
   .homolog-callout__icon{font-size:1.4rem;line-height:1}
   .homolog-callout__title{font-family:var(--font-d);font-weight:700;font-size:1rem;margin-bottom:0.5rem}
@@ -49,18 +51,18 @@
 </head>
 <body>
 
-<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="toggleMenu()">Početna</a><a href="quad.html" onclick="toggleMenu()">Flota</a><a href="obitelj.html" onclick="toggleMenu()">Obitelj</a><a href="cijene.html" onclick="toggleMenu()">Cijene</a><a href="rute.html" onclick="toggleMenu()">Rute</a><a href="faq.html" onclick="toggleMenu()">Pitanja</a><a href="o-nama.html" onclick="toggleMenu()">O nama</a><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a><a href="blog.html" onclick="toggleMenu()">Blog</a></div>
-<nav class="nav" id="nav"><div class="container nav__inner"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:44px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a><div class="nav__links"><a href="quad.html" class="active">Flota</a><a href="obitelj.html">Obitelj</a><a href="cijene.html">Cijene</a><a href="rute.html">Rute</a><a href="faq.html">Pitanja</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a><a href="blog.html">Blog</a></div><button class="btn btn--accent btn--sm nav__book" onclick="openBooking()">Rezerviraj</button><button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button></div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="toggleMenu()">Početna</a><a href="quad.html" onclick="toggleMenu()">Flota</a><a href="obitelj.html" onclick="toggleMenu()">Obitelj</a><a href="cijene.html" onclick="toggleMenu()">Cijene</a><a href="rute.html" onclick="toggleMenu()">Rute</a><a href="faq.html" onclick="toggleMenu()">Pitanja</a><a href="o-nama.html" onclick="toggleMenu()">O nama</a><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a><a href="blog.html" onclick="toggleMenu()">Blog</a><a href="partneri.html" onclick="toggleMenu()">Partneri</a></div>
+<nav class="nav" id="nav"><div class="container nav__inner"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:44px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a><div class="nav__links"><a href="quad.html" class="active">Flota</a><a href="obitelj.html">Obitelj</a><a href="cijene.html">Cijene</a><a href="rute.html">Rute</a><a href="faq.html">Pitanja</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a><a href="blog.html">Blog</a><a href="partneri.html">Partneri</a></div><button class="btn btn--accent btn--sm nav__book" onclick="openBooking()">Rezerviraj</button><button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button></div></nav>
 
 <!-- HERO -->
 <section class="hero hero--short seg-hero">
   <div class="hero__bg" style="overflow:hidden">
-    <img src="img/segway-at5l-field.jpg" alt="Segway AT5L EPS" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    <img src="img/segway-at5l-field.webp" alt="Segway AT5L EPS" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
   </div>
   <div class="container hero__content">
     <div class="section-overline"><a href="quad.html" style="color:inherit;text-decoration:none">Flota</a> · Segway AT5L EPS</div>
     <h1 class="hero__headline">Segway AT5L EPS</h1>
-    <p class="hero__sub">Najsvježiji model u floti i najbliže onome što ATV može biti u 2026. Moderna elektronika, elektronički servo upravljač i najjednostavnije upravljanje.</p>
+    <p class="hero__sub">Najsvježiji model u floti i najbliže onome što ATV može biti u 2026. Moderna elektronika, elektronički servo upravljač i najjednostavnije upravljanje — savršen za prvu avanturu.</p>
   </div>
 </section>
 
@@ -71,8 +73,8 @@
       <div>
         <div class="section-overline">Uvod</div>
         <h2 class="section-title mt-1">Moderan ATV, jednostavan za voziti</h2>
-        <p class="section-desc mt-2">Želite iskusiti ATV, ali vas zabrinjava ideja da je "quad za profesionalce"? Segway AT5L je stvoren točno za taj trenutak — svakome tko prvi put sjeda na ozbiljan quad.</p>
-        <p class="section-desc mt-2">Elektronički servo upravljač oduzima napor iz zavoja, moderna elektronika i mekano paljenje čine ubrzanje glatkim i predvidljivim. Bez učenja tehničkih trikova — sjednete, pritisnete gas i vozite.</p>
+        <p class="section-desc mt-2">Želite iskusiti ATV, ali vas zabrinjava ideja da je "quad za profesionalce"? Segway AT5L je stvoren točno za taj trenutak — svakome tko prvi put sjeda na ozbiljan quad za dan pravih uzbuđenja.</p>
+        <p class="section-desc mt-2">Elektronički servo upravljač oduzima napor iz zavoja, moderna elektronika i mekano paljenje čine ubrzanje glatkim i predvidljivim. Bez učenja tehničkih trikova — sjednete, pritisnete gas i uživate u vožnji od prve minute.</p>
         <div style="display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:1.2rem">
           <span class="chip chip--accent">4 vozila u floti</span>
           <span class="chip">499 cm³</span>
@@ -81,7 +83,7 @@
           <span class="chip">T3b homologacija</span>
         </div>
       </div>
-      <div style="border-radius:var(--r-xl);overflow:hidden;aspect-ratio:3/2"><img src="img/segway-at5l-hero.jpg" alt="Segway AT5L EPS na terenu" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="border-radius:var(--r-xl);overflow:hidden;aspect-ratio:3/2"><img src="img/segway-at5l-hero.webp" alt="Segway AT5L EPS na terenu" style="width:100%;height:100%;object-fit:cover;display:block"></div>
     </div>
   </div>
 </section>
@@ -91,10 +93,10 @@
   <div class="container">
     <div class="section-overline">Za koga</div>
     <h2 class="section-title mt-1">Kome je namijenjen Segway AT5L EPS?</h2>
-    <p class="section-desc mt-2">Segway nije radni stroj kojim se pomaže u lovu ili šumi. Ovo je moderan ATV za tri tipa vozača kojima je zabava važnija od tereta.</p>
+    <p class="section-desc mt-2">Segway je moderan ATV za rekreativce i sve koji žele iskusiti off-road vožnju bez učenja tehničkih trikova. Tri tipa vozača koji ga najviše obožavaju:</p>
 
     <div style="display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:1.5rem" class="use-photo-grid">
-      <div style="border-radius:var(--r-xl);overflow:hidden;aspect-ratio:4/3"><img src="img/segway-at5l-water.jpg" alt="Segway AT5L u akciji" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+      <div style="border-radius:var(--r-xl);overflow:hidden;aspect-ratio:4/3"><img src="img/segway-at5l-water.webp" alt="Segway AT5L u akciji" style="width:100%;height:100%;object-fit:cover;display:block"></div>
       <div>
         <div class="use-item">
           <div class="use-item__icon">🏔️</div>
@@ -106,7 +108,7 @@
         </div>
         <div class="use-item">
           <div class="use-item__icon">🚜</div>
-          <div><div style="font-family:var(--font-d);font-weight:600;font-size:0.85rem;margin-bottom:0.2rem">Vozači naviknuti na moderna vozila</div><div class="use-item__text">Naviknuti ste na servo upravljač, ABS i moderne mjerne uređaje. Ne želite nazadovati na oldschool quadove kad ovakav model dolazi po istoj cijeni.</div></div>
+          <div><div style="font-family:var(--font-d);font-weight:600;font-size:0.85rem;margin-bottom:0.2rem">Vozači naviknuti na moderna vozila</div><div class="use-item__text">Naviknuti ste na servo upravljač, ABS, moderne mjerne uređaje. Ne želite nazadovati na oldschool quadove kad postoji ovakav model po istoj cijeni.</div></div>
         </div>
       </div>
     </div>
@@ -135,7 +137,7 @@
         <tr><td>Međuosovinski razmak</td><td>1450 mm</td></tr>
         <tr><td>Razmak od tla</td><td>255 mm</td></tr>
         <tr><td>Ukupna nosivost</td><td>270 kg (prednji nosač: 40 kg / stražnji: 60 kg)</td></tr>
-        <tr><td>Homologacija</td><td>T3b (traktor) — omogućuje registraciju i cestovnu upotrebu</td></tr>
+        <tr><td>Homologacija</td><td>T3b — homologiran za javnu cestu i off-road teren</td></tr>
       </tbody>
     </table>
   </div>
@@ -173,35 +175,20 @@
   </div>
 </section>
 
-<!-- T3b HOMOLOGACIJA -->
+<!-- ZAKLJUČAK -->
 <section class="page-section reveal">
   <div class="container" style="max-width:800px">
-    <div class="homolog-callout">
-      <div class="homolog-callout__icon">📋</div>
-      <div>
-        <div class="homolog-callout__title">Zašto odabrati T3b homologaciju?</div>
-        <div class="homolog-callout__text">Segway AT5L EPS dolazi s T3b homologacijom, što znači da se registrira kao traktor. To vam donosi znatne porezne olakšice za tvrtke i OPG-ove, jeftiniju registraciju te legalnu vožnju po javnim cestama s B kategorijom.</div>
-      </div>
+    <div class="conclusion-callout">
+      <strong>Zaključak:</strong> Segway AT5L EPS je najmoderniji ATV u našoj floti — elektronički servo upravljač, mekano paljenje i pametna elektronika čine ga najlakšim quadom za voziti. Bez obzira jeste li prvi put na quadu ili tražite jednostavno, moderno vozilo za zabavan weekend u prirodi, ovaj model jamči uzbudljivu, ali potpuno kontroliranu vožnju od prve minute.
     </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="page-section page-section--border reveal">
-  <div class="container" style="text-align:center">
-    <h2 class="section-title">Iskusite Segway AT5L EPS uživo</h2>
-    <p class="section-desc" style="margin:0.5rem auto 1.5rem;text-align:center">Rezervirajte pola ili cijeli dan i osjetite zašto je Segway najlakši quad za voziti u našoj floti.</p>
-    <div style="display:flex;gap:1.5rem;justify-content:center;margin-bottom:1.5rem;flex-wrap:wrap">
-      <div><div style="font-family:var(--font-d);font-weight:700;font-size:1.5rem">€100</div><div style="font-size:0.5rem;color:var(--text-3);letter-spacing:0.06em;text-transform:uppercase">Pola dana / 6h</div></div>
-      <div><div style="font-family:var(--font-d);font-weight:700;font-size:1.5rem">€150</div><div style="font-size:0.5rem;color:var(--text-3);letter-spacing:0.06em;text-transform:uppercase">Cijeli dan / 12h</div></div>
+    <div style="text-align:center;padding:1.5rem 0 0.5rem">
+      <button class="btn btn--accent" onclick="openBooking()">Rezerviraj vožnju →</button>
     </div>
-    <button class="btn btn--accent" onclick="openBooking('segway','half')">Rezerviraj Segway AT5L →</button>
-    <a href="quad.html" class="btn btn--ghost" style="margin-left:0.5rem">Vidi cijelu flotu</a>
   </div>
 </section>
 
 <!-- MODAL -->
-<div class="modal-overlay" id="bookingModal" onclick="if(event.target===this)closeBooking()"><div class="modal"><button class="modal__close" onclick="closeBooking()">✕</button><div class="modal__title">Rezerviraj vožnju</div><div class="modal__sub">Odaberi quadove i pošalji WhatsApp poruku</div><div class="modal__group"><label class="modal__label">Trajanje</label><div class="modal__toggle" id="durationToggle"><button class="modal__toggle-btn active" data-dur="half" onclick="setDuration('half')">Pola dana<span class="toggle-price">6h</span></button><button class="modal__toggle-btn" data-dur="full" onclick="setDuration('full')">Cijeli dan<span class="toggle-price">12h</span></button></div></div><div class="modal__group"><label class="modal__label">Datum</label><input type="date" class="modal__input" id="bookDate"></div><div class="modal__group"><label class="modal__label">Odaberi quadove</label><div class="quad-picker"><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Segway AT5L</div><div class="quad-row__meta">€130 / €200 · max 4</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('segway',-1)">−</button><span class="modal__stepper-val" id="count-segway">0</span><button class="modal__stepper-btn" onclick="changeCount('segway',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 550L</div><div class="quad-row__meta">€130 / €200 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai550',-1)">−</button><span class="modal__stepper-val" id="count-linhai550">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai550',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 650 Landforce</div><div class="quad-row__meta">€180 / €250 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai650',-1)">−</button><span class="modal__stepper-val" id="count-linhai650">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai650',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 1000</div><div class="quad-row__meta">€250 / €350 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai1000',-1)">−</button><span class="modal__stepper-val" id="count-linhai1000">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai1000',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Dječji quad</div><div class="quad-row__meta">€100 / €150 · max 2 · 6+ god</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('kids',-1)">−</button><span class="modal__stepper-val" id="count-kids">0</span><button class="modal__stepper-btn" onclick="changeCount('kids',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Dječji quad — 3h kraća</div><div class="quad-row__meta">€60 · max 2 · 6+ god</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('kids3h',-1)">−</button><span class="modal__stepper-val" id="count-kids3h">0</span><button class="modal__stepper-btn" onclick="changeCount('kids3h',1)">+</button></div></div></div></div><div class="modal__summary" id="bookSummary"><div class="modal__summary-empty" id="summaryEmpty">Dodajte barem jedan quad</div><div class="modal__summary-total" id="summaryTotal" style="display:none"><span>Ukupno</span><span id="sumTotal">€0</span></div></div><button class="btn btn--accent btn--block" id="bookSubmit" onclick="sendWhatsApp()" style="padding:0.85rem" disabled>Pošalji WhatsApp poruku</button><p class="modal__note">Potvrđujemo u minutama.</p></div></div>
+<div class="modal-overlay" id="bookingModal" onclick="if(event.target===this)closeBooking()"><div class="modal"><button class="modal__close" onclick="closeBooking()">✕</button><div class="modal__title">Rezerviraj vožnju</div><div class="modal__sub">Odaberi tip vožnje i pošalji WhatsApp poruku</div><div class="modal__group"><label class="modal__label">Tip vožnje</label><div class="modal__toggle" id="modeToggle"><button class="modal__toggle-btn active" data-mode="individual" onclick="setBookingMode('individual')">Individualna vožnja<span class="toggle-price">bez vodiča</span></button><button class="modal__toggle-btn" data-mode="tour" onclick="setBookingMode('tour')">Vođena tura<span class="toggle-price">s vodičem</span></button></div></div><div class="modal__group"><label class="modal__label">Datum</label><input type="date" class="modal__input" id="bookDate"></div><div data-mode-section="individual"><div class="modal__group"><label class="modal__label">Trajanje</label><div class="modal__toggle" id="durationToggle"><button class="modal__toggle-btn active" data-dur="half" onclick="setDuration('half')">Pola dana<span class="toggle-price">6h</span></button><button class="modal__toggle-btn" data-dur="full" onclick="setDuration('full')">Cijeli dan<span class="toggle-price">12h</span></button></div></div><div class="modal__group"><label class="modal__label">Odaberi quadove</label><div class="quad-picker"><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Segway AT5L</div><div class="quad-row__meta">€130 / €200 · max 4</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('segway',-1)">−</button><span class="modal__stepper-val" id="count-segway">0</span><button class="modal__stepper-btn" onclick="changeCount('segway',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 550L</div><div class="quad-row__meta">€130 / €200 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai550',-1)">−</button><span class="modal__stepper-val" id="count-linhai550">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai550',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 650 Landforce</div><div class="quad-row__meta">€180 / €250 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai650',-1)">−</button><span class="modal__stepper-val" id="count-linhai650">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai650',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Linhai 1000</div><div class="quad-row__meta">€250 / €350 · max 2</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('linhai1000',-1)">−</button><span class="modal__stepper-val" id="count-linhai1000">0</span><button class="modal__stepper-btn" onclick="changeCount('linhai1000',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Dječji quad</div><div class="quad-row__meta">€100 / €150 · max 2 · 6+ god</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('kids',-1)">−</button><span class="modal__stepper-val" id="count-kids">0</span><button class="modal__stepper-btn" onclick="changeCount('kids',1)">+</button></div></div><div class="quad-row"><div class="quad-row__info"><div class="quad-row__name">Dječji quad — 3h kraća</div><div class="quad-row__meta">€60 · max 2 · 6+ god</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeCount('kids3h',-1)">−</button><span class="modal__stepper-val" id="count-kids3h">0</span><button class="modal__stepper-btn" onclick="changeCount('kids3h',1)">+</button></div></div></div></div></div><div data-mode-section="tour" style="display:none"><div style="background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.25);border-radius:var(--r-md);padding:0.75rem 0.9rem;margin:0 0 1rem"><div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.7rem;color:var(--text-2);letter-spacing:0.02em"><span>💰 <strong style="color:var(--accent)">€200</strong> po vozilu</span><span>👥 do 2 osobe / vozilo</span><span>🚵 s vodičem</span></div></div><div class="modal__group"><label class="modal__label">Broj vozila u vašoj grupi</label><div class="quad-picker"><div class="quad-row" style="padding:0.75rem 0.9rem"><div class="quad-row__info"><div class="quad-row__name">Vozilo + vodič</div><div class="quad-row__meta">€200 po vozilu · do 2 osobe · max 4</div></div><div class="modal__stepper"><button class="modal__stepper-btn" onclick="changeTourCount(-1)">−</button><span class="modal__stepper-val" id="tourCountVal">0</span><button class="modal__stepper-btn" onclick="changeTourCount(1)">+</button></div></div></div></div></div><div class="modal__summary" id="bookSummary"><div class="modal__summary-empty" id="summaryEmpty">Dodajte barem jedan quad</div><div class="modal__summary-total" id="summaryTotal" style="display:none"><span>Ukupno</span><span id="sumTotal">€0</span></div></div><button class="btn btn--accent btn--block" id="bookSubmit" onclick="sendWhatsApp()" style="padding:0.85rem" disabled>Pošalji WhatsApp poruku</button><p class="modal__note">Potvrđujemo u minutama.</p></div></div>
 
 <footer class="footer"><div class="container"><div class="footer__top"><div class="footer__brand"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:52px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a></div><div><div class="footer__col-title">Stranice</div><ul class="footer__links"><li><a href="quad.html">Flota</a></li><li><a href="obitelj.html">Obitelj</a></li><li><a href="cijene.html">Cijene</a></li><li><a href="rute.html">Rute</a></li></ul></div><div><div class="footer__col-title">Info</div><ul class="footer__links"><li><a href="faq.html">Pitanja</a></li><li><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a></li></ul></div><div><div class="footer__col-title">Kontakt</div><ul class="footer__links"><li><a href="https://wa.me/385955442541">WhatsApp</a></li><li><a href="tel:+385955442541">+385 95 544 2541</a></li></ul></div></div><div class="footer__bottom"><p>© 2026 Quad Rent Zagreb.</p><p>Velikopoljska 22A, Veliko Polje, 10010 Zagreb</p></div></div></footer>
 <script src="main.js"></script>

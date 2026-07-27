@@ -17,8 +17,8 @@
 </head>
 <body>
 
-<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="toggleMenu()">Početna</a><a href="quad.html" onclick="toggleMenu()">Flota</a><a href="obitelj.html" onclick="toggleMenu()">Obitelj</a><a href="cijene.html" onclick="toggleMenu()">Cijene</a><a href="rute.html" onclick="toggleMenu()">Rute</a><a href="faq.html" onclick="toggleMenu()">Pitanja</a><a href="o-nama.html" onclick="toggleMenu()">O nama</a><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a><a href="blog.html" onclick="toggleMenu()">Blog</a></div>
-<nav class="nav" id="nav"><div class="container nav__inner"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:44px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a><div class="nav__links"><a href="quad.html">Flota</a><a href="obitelj.html">Obitelj</a><a href="cijene.html">Cijene</a><a href="rute.html" class="active">Rute</a><a href="faq.html">Pitanja</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a><a href="blog.html">Blog</a></div><button class="btn btn--accent btn--sm nav__book" onclick="openBooking()">Rezerviraj</button><button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button></div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html" onclick="toggleMenu()">Početna</a><a href="quad.html" onclick="toggleMenu()">Flota</a><a href="obitelj.html" onclick="toggleMenu()">Obitelj</a><a href="cijene.html" onclick="toggleMenu()">Cijene</a><a href="rute.html" onclick="toggleMenu()">Rute</a><a href="faq.html" onclick="toggleMenu()">Pitanja</a><a href="o-nama.html" onclick="toggleMenu()">O nama</a><a href="kontakt.html" onclick="toggleMenu()">Kontakt</a><a href="blog.html" onclick="toggleMenu()">Blog</a><a href="partneri.html" onclick="toggleMenu()">Partneri</a></div>
+<nav class="nav" id="nav"><div class="container nav__inner"><a href="index.html" class="nav__logo" style="display:inline-flex;align-items:center;gap:0.6rem"><img src="logo_quad_zagreb.svg" alt="Quad Rent Zagreb" style="height:44px;width:auto;display:block"><span style="display:inline-block">Quad Rent Zagreb<small>Najam quadova · okolica Zagreba</small></span></a><div class="nav__links"><a href="quad.html">Flota</a><a href="obitelj.html">Obitelj</a><a href="cijene.html">Cijene</a><a href="rute.html" class="active">Rute</a><a href="faq.html">Pitanja</a><a href="o-nama.html">O nama</a><a href="kontakt.html">Kontakt</a><a href="blog.html">Blog</a><a href="partneri.html">Partneri</a></div><button class="btn btn--accent btn--sm nav__book" onclick="openBooking()">Rezerviraj</button><button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button></div></nav>
 
 <section class="hero hero--short rute-hero">
   <div class="hero__bg" style="overflow:hidden">
@@ -91,7 +91,7 @@
     <div style="display:grid;grid-template-columns:1fr;gap:1.5rem" class="routes-layout">
 
       <div class="map-frame" onclick="openMapLightbox()" aria-label="Karta ruta — klikni za povećanje">
-        <img src="img/slika_ruta.png" alt="Karta ruta Quad Zagreb — Veliko Polje baza s označenim rutama do Zračne Luke, Pokupskog, Sljemena i drugih odredišta" loading="lazy">
+        <img src="img/slika_ruta.webp" alt="Karta ruta Quad Zagreb — Veliko Polje baza s označenim rutama do Zračne Luke, Pokupskog, Sljemena i drugih odredišta" loading="lazy">
         <div class="map-frame__hint"><span>⤢</span> Klikni za povećanje</div>
       </div>
 
@@ -123,7 +123,7 @@
 <!-- MAP LIGHTBOX -->
 <div class="map-lightbox" id="mapLightbox" onclick="if(event.target===this||event.target.classList.contains('map-lightbox__close'))closeMapLightbox()">
   <button class="map-lightbox__close" onclick="closeMapLightbox()" aria-label="Zatvori">✕</button>
-  <img src="img/slika_ruta.png" alt="Karta ruta — Quad Zagreb">
+  <img src="img/slika_ruta.webp" alt="Karta ruta — Quad Zagreb">
 </div>
 <script>
 function openMapLightbox(){document.getElementById('mapLightbox').classList.add('open');document.body.style.overflow='hidden'}

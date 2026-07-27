@@ -7,6 +7,13 @@
 <title>Quad Rent Zagreb — Najam quadova i off-road avanture</title>
 <link rel="stylesheet" href="style.css">
 <style>
+  /* Mobile-only quick nav: B2B + BON poklon (lijevo od hamburgera) */
+  .nav__mobile-quick{display:inline-flex;align-items:center;gap:0.25rem;height:36px;padding:0 0.65rem;font-family:var(--font-d);font-weight:700;font-size:0.82rem;color:var(--accent);text-decoration:none;border-radius:var(--r-md);letter-spacing:0.05em;transition:background 0.2s;line-height:1}
+  .nav__mobile-quick:hover{background:rgba(245,166,35,0.1)}
+  .nav__mobile-quick--gift{padding:0 0.6rem}
+  .nav__mobile-quick__emoji{font-size:1rem;line-height:1}
+  @media(min-width:700px){.nav__mobile-quick{display:none}}
+
   /* Route cards on homepage — visual hero-style card with background image */
   .route-card{position:relative;display:block;text-decoration:none;color:inherit;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;border:1px solid var(--border);transition:border-color 0.3s,transform 0.3s ease}
   .route-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}
@@ -56,14 +63,14 @@
       <a href="partneri.html">Partneri</a>
     </div>
     <button class="btn btn--accent btn--sm nav__book" onclick="openBooking()">Rezerviraj</button>
-    <button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button>
+    <a href="partneri.html" class="nav__mobile-quick" aria-label="B2B — Partneri">B2B</a><a href="poklon.html" class="nav__mobile-quick nav__mobile-quick--gift" aria-label="Poklon avanture"><span class="nav__mobile-quick__emoji">🎁</span>BON</a><button class="nav__hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Izbornik"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero__bg">
-    <video autoplay muted loop playsinline preload="metadata" poster="hero-poster.jpg"
+    <video autoplay muted loop playsinline preload="metadata" poster="hero-poster.webp"
            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
       <source src="hero.mp4" type="video/mp4">
       <source src="hero.webm" type="video/webm">
@@ -136,7 +143,7 @@
         <div class="fleet-mini__body">
           <div style="margin-bottom:0.4rem"><span class="chip" style="font-size:0.5rem">2 vozila</span></div>
           <div class="fleet-mini__name">Linhai 550L</div>
-          <div class="fleet-mini__desc">Pouzdani · robusni · stabilni</div>
+          <div class="fleet-mini__desc">Najisplativiji · pouzdan · racionalan</div>
           <div style="display:flex;gap:0.25rem;flex-wrap:wrap"><span class="chip" style="font-size:0.48rem;padding:0.18rem 0.45rem">550cc</span><span class="chip" style="font-size:0.48rem;padding:0.18rem 0.45rem">4×4</span><span class="chip" style="font-size:0.48rem;padding:0.18rem 0.45rem">EFI</span></div>
         </div>
       </a>
@@ -145,7 +152,7 @@
         <div class="fleet-mini__body">
           <div style="margin-bottom:0.4rem"><span class="chip" style="font-size:0.5rem">2 vozila</span></div>
           <div class="fleet-mini__name">Linhai 650 Landforce</div>
-          <div class="fleet-mini__desc">Terenski ratnik · maskirni</div>
+          <div class="fleet-mini__desc">Korak dalje · udobnost u dvoje</div>
           <div style="display:flex;gap:0.25rem;flex-wrap:wrap"><span class="chip" style="font-size:0.48rem;padding:0.18rem 0.45rem">650cc</span><span class="chip" style="font-size:0.48rem;padding:0.18rem 0.45rem">4×4</span><span class="chip chip--accent" style="font-size:0.48rem;padding:0.18rem 0.45rem">Off-road</span></div>
         </div>
       </a>
@@ -198,7 +205,7 @@
     </div>
     <div class="grid-3">
       <a href="blog-4.html" class="route-card">
-        <img src="img/sumse_staze_main.jpeg" alt="Šumske staze — quadovi u koloni na livadi" loading="lazy">
+        <img src="img/sumse_staze_main.webp" alt="Šumske staze — quadovi u koloni na livadi" loading="lazy">
         <div class="route-card__overlay"></div>
         <div class="route-card__content">
           <div class="route-card__title">Šumske staze</div>
@@ -207,7 +214,7 @@
         </div>
       </a>
       <a href="blog-5.html" class="route-card">
-        <img src="img/obitelj_staza_main.jpeg" alt="Obiteljska ruta — dijete i tata na quadu, polje" loading="lazy">
+        <img src="img/obitelj_staza_main.webp" alt="Obiteljska ruta — dijete i tata na quadu, polje" loading="lazy">
         <div class="route-card__overlay"></div>
         <div class="route-card__content">
           <div class="route-card__title">Obiteljska ruta</div>
