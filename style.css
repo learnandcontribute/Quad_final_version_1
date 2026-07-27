@@ -124,10 +124,13 @@ ul{list-style:none}
 .nav__hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-5px)}
 
 /* mobile menu */
-.mobile-menu{position:fixed;inset:0;background:var(--bg);z-index:99;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;gap:1.1rem;padding:5.5rem 1rem 2rem;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity 0.4s}
+.mobile-menu{position:fixed;inset:0;background:var(--bg);z-index:300;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.35rem;padding:5rem 1.5rem 3rem;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity 0.35s}
 .mobile-menu.open{opacity:1;pointer-events:all}
-.mobile-menu a{font-family:var(--font-d);font-size:1.3rem;font-weight:600;color:var(--text-2);transition:color 0.2s}
-.mobile-menu a:hover{color:var(--accent)}
+.mobile-menu a{font-family:var(--font-d);font-size:1.5rem;font-weight:600;color:var(--text-2);transition:color 0.2s}
+.mobile-menu a:hover,.mobile-menu a:active{color:var(--accent)}
+.mobile-menu__close{position:absolute;top:1.2rem;right:1.2rem;width:46px;height:46px;background:transparent;border:1px solid var(--border);border-radius:50%;color:var(--text);font-size:1.15rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s,border-color 0.2s;padding:0}
+.mobile-menu__close:hover{background:rgba(245,166,35,0.1);border-color:rgba(245,166,35,0.4);color:var(--accent)}
+.mobile-menu__logo{position:absolute;top:1.5rem;left:1.5rem;height:40px;width:auto;display:block;opacity:0.8}
 
 /* ═══════════════════════════════════════
    HERO
